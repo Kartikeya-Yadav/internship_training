@@ -1,0 +1,15 @@
+<p>courses works!</p>
+
+<h2>Courses</h2>
+<div *ngIf="courseId == 0; else templateName">
+    <p>View full list. . .</p>
+    <div *ngFor="let course of courses">
+        <p>Course Id: {{course.courseId}}</p>
+        <p>name: {{course.name}}</p>
+    </div>
+</div>
+<ng-template #templateName>
+    <p>Course Id: {{courseId}}</p>
+</ng-template>
+
+<a routerLink="/home">Go Back</a>

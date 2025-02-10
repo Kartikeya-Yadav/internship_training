@@ -1,0 +1,7 @@
+<p>order-list works!</p>
+
+<div *ngFor="let product of orderList">
+    <h4>Product: {{product.name}}</h4>
+    <p> Price: Rs.{{product.price}}/-</p>
+    <button (click)="removeFromOrder(product)">Remove</button>
+</div>

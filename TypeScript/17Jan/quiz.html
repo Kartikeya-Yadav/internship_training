@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz System</title>
+</head>
+<body>
+
+    <h1>Quiz System</h1>
+    <script>
+        var arr = [
+            { question: "q1", ans: "a1" },
+            { question: "q2", ans: "a2" },
+            { question: "q3", ans: "a3" },
+            { question: "q4", ans: "a4" }
+        ];
+        function quiz(arr) {
+            var score = 0;
+            for (var i = 0; i < 4; i++) {
+                var randomIndex = Math.floor(Math.random() * arr.length);
+                var ans = prompt(arr[randomIndex].question);
+                if (arr[randomIndex].ans == ans)
+                    score++;
+            }
+            console.log(score);
+        }
+        quiz(arr);
+    </script>
+</body>
+</html>
+

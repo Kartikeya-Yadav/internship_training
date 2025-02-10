@@ -1,0 +1,13 @@
+<p>Learning Pipes | </p>
+
+<p>{{today | date }}</p>
+<p>{{myNumber | number: '2.1-5' }}</p>
+<p>{{amount | currency: 'INR' }}</p>
+<p>{{tutorial | uppercase }}</p>
+
+<p>{{123456781234 | credit}}</p>
+
+<label for="card">Enther Number: </label>
+<input type="text" name=" card" [(ngModel)]="card" /> 
+
+{{card | credit}}

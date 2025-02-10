@@ -1,0 +1,32 @@
+/* Navbar styles */
+nav {
+    background-color: #333; /* Dark background color */
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 10px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* Ensure it is above other elements */
+    text-align: left; /* Align links to the left */
+    padding-left: 20px; /* Add padding to the left */
+}
+
+/* Navbar link styles */
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    display: inline-block;
+}
+
+/* Hover effect for links */
+nav a:hover {
+    background-color: #575757; /* Slightly lighter background on hover */
+    border-radius: 4px;
+}
+
+/* Adjusting content to avoid being hidden under fixed navbar */
+.content {
+    padding-top: 50px; /* Adjust based on the height of the navbar */
+}

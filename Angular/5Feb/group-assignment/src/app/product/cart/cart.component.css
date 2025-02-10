@@ -1,0 +1,64 @@
+/* Styling for the View Products link */
+a[routerLink="../product-list"] {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease;
+  }
+  
+  a[routerLink="../product-list"]:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Styling for the overall container */
+  div {
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Styling for product names */
+  h4 {
+    font-size: 1.1em;
+    color: #333;
+    margin: 10px 0;
+  }
+  
+  /* Styling for product prices */
+  p {
+    font-size: 1em;
+    color: #666;
+  }
+  
+  /* Styling for the buttons */
+  button {
+    padding: 8px 15px;
+    background-color: #fc650e;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-right: 10px;
+  }
+  
+  button:hover {
+    background-color: #ff3300;
+  }
+  
+  button.place-order {
+    background-color: #fc650e;
+  }
+  
+  button.place-order:hover {
+    background-color: #ff3300;
+  }
+  

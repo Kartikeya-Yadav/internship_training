@@ -1,0 +1,13 @@
+<p>Login Form</p>
+
+<div class="container">
+<form [formGroup]="user" (ngSubmit)="onSubmit()">
+    <label for="email">Email:</label>
+    <input type="email" name="email" id="email" formControlName="email"><br>
+    <label for="password">Password: </label>
+    <input type="password" name="password" id="" formControlName="password"><br>
+    <button type="submit" [disabled]="user.invalid">Submit</button>
+</form>
+</div>
+
+<a routerLink="../register">Go to register</a>

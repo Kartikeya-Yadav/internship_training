@@ -1,0 +1,23 @@
+<p>cart works!</p>
+
+<a routerLink="../product-list">View Products</a>
+
+<div *ngIf="cartList.length == 0; else cart">
+    <p>Your Cart is empty. . .</p>
+</div>
+
+<ng-template #cart class="cart">
+    <div *ngFor="let product of cartList" class="cart-list">
+        <h4>Product: {{product.name}}</h4>
+        <p>Price: Rs.{{product.price}}/-</p>
+        <button (click)="removeFromCart(product)">Remove</button>
+        <button (click)="placeOrder(product)">Place Order</button>
+    </div>
+
+
+    <div class="cart-summery">
+        <h5>Cart Summery</h5>
+        <p>Toatal Items: {{cartList.length}}</p>
+        <p>Toatal Amount: Rs. {{getTotalAmount()}}/-</p>
+    </div>
+</ng-template>

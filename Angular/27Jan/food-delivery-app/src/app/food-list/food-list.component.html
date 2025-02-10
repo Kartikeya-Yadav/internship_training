@@ -1,0 +1,12 @@
+<h2>Food-List </h2>
+<div >
+        @for (food of foodItems; track food.name) {
+            <div style="height: 100px; width: 150px; " >
+                <div>{{food.name}} - Rs.{{food.price}}</div>
+                <button (click)="addToCart(food)">Add to Cart</button>
+                <br>
+            </div>
+        } @empty {
+        <li>There are no items.</li>
+        }
+</div>

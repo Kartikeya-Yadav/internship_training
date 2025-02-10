@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="myclass">Heading</h1>
+    <p class="myclass">This is paragraph.</p>
+
+
+    <script>
+        let myVar = document.getElementsByClassName("myclass");
+        console.log([...myVar]);
+
+        let para = document.getElementsByClassName("myclass")[1];
+        para.innerHTML = "Updated Data"
+        para.style.backgroundcolor = "red"
+
+        function outerFunction(outer){
+            return function innerFunction(inner){
+                console.log(outer);
+                console.log(inner);
+                
+            }
+        }
+
+        let newFunction = outerFunction("outside");
+        newFunction("inner");
+
+        function counter(){
+            let count=0;
+            return {
+                inc:() => count++,
+                dec:() => count--,
+                getCount:() => count
+            }
+        }
+
+        console.log(counter.getCount)
+
+        function bankAccount(account){
+            let accountNo = account;
+            let balance = 0;
+
+            return{
+               diposit(amount){
+                balance += amount;
+               },
+               withdral(amount){
+                balance -= amount;
+               },
+               getBalance(){
+                return balance;
+               }
+            }
+        }
+
+        const bank = bankAccount(101);
+        bank.diposit(500);
+        bank.withdral(200);
+        console.log(bank.getBalance());
+
+        (function(){
+            console.log("IIFE Function");
+        })();
+
+  
+
+
+    </script>
+</body>
+</html>

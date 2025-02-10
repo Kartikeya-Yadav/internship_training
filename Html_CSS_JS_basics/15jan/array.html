@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+</head>
+<body>
+<script>
+    let arr = [];
+    for(let i=0; i<5; i++){
+        let item = parseInt( prompt("Enter the Numbers:"));
+        arr.push(item)
+    }
+    console.log(arr);
+
+    let small = Number.MAX_SAFE_INTEGER;
+    let small2 = Number.MAX_SAFE_INTEGER;
+
+    for(i=0; i<5; i++){   
+        if(small > arr[i]){
+            small2 = small;
+            small = arr[i];
+        }
+        else if (arr[i] < small2 && arr[i] != small){
+            small2 = arr[i];
+        }
+    }
+
+    
+
+
+    console.log(small);
+    console.log(small2);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic List</title>
+</head>
+<body>
+    <p id="list"></p>
+
+    <input type="text" placeholder="Enter Elememt" id="val" >
+    <button onclick="addElement()">Add Element</button>
+    <button onclick="removeLast()">Remove Last Element</button>
+    <button onclick="clearList()">Clear List</button>
+<script>
+
+    let list = [];
+  
+
+    function addElement(){
+        list.push(document.getElementById("val").value);
+       
+        updatelist();
+    }
+
+    function removeLast(){
+        list.pop();
+        updatelist();
+    }
+
+    function clearList(){
+        list = [];
+        updatelist();
+    }
+
+    function updatelist(){
+        console.log(list.toString());
+        document.getElementById("list").innerHTML = list.toString();
+    }
+    
+
+</script>
+</body>
+</html>

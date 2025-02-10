@@ -1,0 +1,9 @@
+<p>order-status works!</p>
+<p>Order Status: {{viewStatus}}</p>
+<div *ngIf="!completeFlag; else another">
+    <button (click)="unsub()">Unsubscribe</button>
+</div>
+<ng-template #another>
+    <p>Order tracking Completed . . . </p>
+</ng-template>
+

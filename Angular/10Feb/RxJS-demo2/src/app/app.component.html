@@ -1,0 +1,14 @@
+<button (click)="subScribeToStockUpdate()">Subscribe to Stock Update</button>
+
+<div *ngFor="let subObj of subList; let i =index">
+  <p>Subscriber: {{i+1}}</p>
+  <p>Stock Price: {{latastPrice}}</p>
+  <button (click)="unsubScribeToStockUpdate(subObj.sub)"> Unsubscribe</button>
+</div>
+
+<p>Total Subscribers: {{subList.length}}</p>
+
+
+
+
+

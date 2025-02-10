@@ -1,0 +1,21 @@
+<h2>
+    Create Tasks. . .
+</h2>
+
+<input id="name" [(ngModel)]="name" name="name">
+<select name="status" id="status" [(ngModel)]="status">
+    <option value="Pending">Pending</option>
+    <option value="In Progress">In Progress</option>
+    <option value="Completed">Completed</option>
+</select>
+<select name="priority" id="priority" [(ngModel)]="priority">
+    <option value="High">High</option>
+    <option value="Medium">Medium</option>
+    <option value="Low">Low</option>
+</select>
+<pre>
+{{name}}
+{{status}}
+{{priority}}
+<button (click)="addTask()">Add Task</button>
+</pre>

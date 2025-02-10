@@ -1,0 +1,16 @@
+<div class="cart">
+    <h2>Cart Items</h2>
+    @for(food of cartItems; track food.name){
+        <div style="height: 100px; width: 150px; " >
+            <div>{{food.name}} - Rs.{{food.price}}</div>
+            <button (click)="removeFromCart(food)">Remove</button>
+            <br>
+        </div>
+    }
+    @if(cartItems.length > 0){
+       <h4>Total Price: Rs. {{getTotalPrice()}}</h4>
+    }@else{
+        <h4>Your Cart Is empty.</h4>
+    }
+
+</div>

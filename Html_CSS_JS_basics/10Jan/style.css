@@ -1,0 +1,69 @@
+/* External CSS  */
+
+body {
+    background-color: wheat;
+}
+
+.abc {
+    color: red;
+}
+
+#name {
+    text-align: left;
+    background-color: aqua;
+    opacity: 0.5;
+}
+
+h2, p {
+    text-align: center;
+}
+.media {
+    border: 3px groove whitesmoke;
+    width: 400px;
+    height: 200px;
+    border-radius: 10px;
+}
+
+p::first-line {
+    color: #ff0000;
+    font-variant: small-caps;
+}
+
+a:hover {
+    color: chartreuse;
+}
+
+li {
+    text-align: left;
+}
+
+
+li:nth-child(2){
+    color: darkorchid;
+}
+
+li:nth-child(odd) {
+    color: darkred;
+}
+
+#name01{
+    box-sizing: content-box;
+    text-align: left;
+    width: 200px;
+    height: 20px;
+}
+
+body {
+    background-image: url(https://blogger.googleusercontent.com/img/a/AVvXsEhoRQHzPoS5coajfpSgwt8GSCGIeArKNSMOX5I5XzVLGiHqQ4aMzWYWorGZAjM2EiSa_TmXHmBYod1mU55tImCJZwkIj16g6ZANaOXa7euoGcFSDbywxif1cdMWjfGg4TlONz6GYR-J2ZUbq8WD6mzwX-eCIuVT2NNcGK_PjDtA0zCtzdmQAvqLmOqMgci-=s16000-rw);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+
+/* prority 
+inline
+id selectors
+class, attribute, psudo class
+element selecter, psudo element
+universal selecter */

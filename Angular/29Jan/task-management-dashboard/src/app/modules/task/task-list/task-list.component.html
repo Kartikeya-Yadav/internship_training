@@ -1,0 +1,22 @@
+<h2>
+    Tasks. . .
+</h2>
+
+<div *ngFor="let task of tasks">
+    <div>
+        <pre>
+        {{task.name}}
+        {{task.status}}
+        {{task.priority}}
+        <select name="status" id="status" [(ngModel)]="newStatus">
+            <option value="Pending">Pending</option>
+            <option value="In Progress">In Progress</option>
+            <option value="Completed">Completed</option>
+        </select><button (click)="updateTaskStatus(task, newStatus)">Update Status</button>
+        <button (click)="removeTask(task)">Delete Task</button>
+        </pre>
+    </div>
+</div>
+<div *ngIf="tasks.length===0">
+    <p>Your List is empty. . .</p>
+</div>

@@ -1,0 +1,15 @@
+<p>product-list</p>
+
+<a routerLink="../cart">View Cart</a>
+
+<div class="container">
+    <div *ngFor="let product of productList" class="product-list">
+        <h4>{{product.name}}</h4>
+        <p>Price: Rs.{{product.price}}/-</p>
+        <button (click)="addToCart(product)">Add To Cart</button>
+        <button (click)="placeOrder(product)">Place Order</button>
+    </div>
+</div>
+
+
+

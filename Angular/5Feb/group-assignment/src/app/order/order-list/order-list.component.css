@@ -1,0 +1,46 @@
+/* Styling for the overall container */
+div {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Styling for product names */
+  h4 {
+    font-size: 1.2em;
+    color: #333;
+    margin: 5px 0;
+  }
+  
+  /* Styling for product prices */
+  p {
+    font-size: 1em;
+    color: #666;
+  }
+  
+  /* Styling for the remove button */
+  button {
+    padding: 8px 12px;
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #e05353;
+  }
+  
+  /* Styling for the <p>order-list works!</p> */
+  p.order-list {
+    font-size: 1.5em;
+    color: #4a90e2;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
