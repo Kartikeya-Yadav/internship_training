@@ -1,0 +1,8 @@
+<p>product-list</p>
+<div class="product-list">
+    <div *ngFor="let product of productList" class="product-item">
+        <h4>{{product.name}}</h4>
+        <p>Price: Rs.{{product.price}}/-</p>
+        <button (click)="addToCart(product)">Add To Cart</button>
+    </div>
+</div>

@@ -7,42 +7,42 @@ import { debounceTime, distinctUntilChanged, fromEvent, map, throttleTime } from
   standalone: false,
   styleUrl: './app.component.css'
 })
-export class AppComponent implements AfterViewInit{
+export class AppComponent implements AfterViewInit {
   title = 'debouncing-demo';
 
-  constructor(){
+  constructor() {
     fromEvent(window, 'scroll')
       .pipe(throttleTime(2000))
-      .subscribe(()=> console.log('User is Scrolling . . .'));
+      .subscribe(() => console.log('User is Scrolling . . .'));
   }
 
   ngAfterViewInit(): void {
-    
+
     const searchInput = document.getElementById('search');
-    if(searchInput){
+    if (searchInput) {
       fromEvent(searchInput, 'input')
-      .pipe(
-        map((event: any) => event.target.value),
-        debounceTime(500),
-        distinctUntilChanged()
-      )
-      .subscribe(value => console.log('Searching for:', value));
+        .pipe(
+          map((event: any) => event.target.value),
+          debounceTime(500),
+          distinctUntilChanged()
+        )
+        .subscribe(value => console.log('Searching for:', value));
     }
     else {
       console.error('Search input not found in DOM');
-      
+
     }
 
     const button = document.getElementById('clickButton');
-    if(button){
+    if (button) {
       fromEvent(button, 'click')
-      .pipe(
-        throttleTime(2000))
+        .pipe(
+          throttleTime(2000))
         .subscribe(() => console.log('Button Clicked'));
     }
-    else{
+    else {
       console.error('Button element not found');
-      
+
     }
 
   }

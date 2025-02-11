@@ -1,0 +1,9 @@
+<p>login works!</p>
+
+<label for="name">Name: </label>
+<input type="text" name="name" id="name" [(ngModel)]="user">
+
+<p>{{user}} is going to log in . . .</p>
+
+<button (click)="logIn(user)">Log in</button>
+<button (click)="logOut()">Log Out</button>
