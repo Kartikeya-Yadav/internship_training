@@ -1,0 +1,25 @@
+<p>search-component works!</p>
+
+<!-- Create search using input 
+Used ngModel for 2 way binding of searchValue
+Implemented event binding on input to filter userList -->
+<input type="text" [(ngModel)]="searchValue" placeholder="Search users..."  #searchInput (input)="onSearchChange(searchInput.value)" />
+<p>Searching For: {{searchValue}}</p>
+
+<!-- If the search user does not exit
+The SearchedUser list will be empty -->
+<div *ngIf="searchedUsers.length === 0; else elseTemplate">
+    <p>Your Search is not avalable. . .</p>
+</div>
+
+<!-- Create else template for show search results using ng-template. 
+Used json pipe to show the user object 
+we also show user names only by user.name-->
+<ng-template #elseTemplate>
+    <ul>
+    <li *ngFor="let user of searchedUsers">
+        {{ user | json}}
+    </li>
+    </ul>
+</ng-template>
+

@@ -1,0 +1,10 @@
+<p>edit-profile works!</p>
+
+<p>edit your profile</p>
+
+<label for="newName">Enter New Name: </label>
+<input type="text" name="newName" id="" [(ngModel)]="newUserValue">
+
+<p>Your new name will be: {{newUserValue}}</p>
+
+<button (click)="updateprofile(newUserValue)">Conform</button>
