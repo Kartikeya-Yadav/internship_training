@@ -26,10 +26,10 @@ group by city;
 
 select employee_name, salary, city
 from employee_k
-where salary in (select max(salary) 
-				 from employee_k 
-				 group by city);
-
+where salary in (
+	select max(salary) 
+	from employee_k 
+	group by city);
 
 
 -- View
@@ -102,14 +102,16 @@ insert into bookstore_orders (order_id, customer_id, book_id, order_date) values
 -- Task 1 - Active Customers.
 select *
 from bookstore_customers
-where customer_id in (select customer_id
-					  from bookstore_orders);
+where customer_id in (
+	select customer_id
+	from bookstore_orders);
 
 -- Task 2 - Books that not ordered.
 select *
 from bookstore_books
-where book_id not in (select book_id
-					  from bookstore_orders);
+where book_id not in (
+	select book_id
+	from bookstore_orders);
 
 -- Task 3 - Books that out of stock.
 select *
@@ -119,7 +121,7 @@ where quantity = 0;
 -- Task 4 - View
 create view bookstore_order_summary as
 select bo.order_id,
-	   bc.customer_name,
+       bc.customer_name,
        bb.title AS book_title,
        bo.order_date
 from bookstore_orders bo
@@ -132,8 +134,9 @@ from bookstore_order_summary;
 -- Task 5 - Most Expencive Book.
 select title, price
 from bookstore_books
-where price = (select max(price)
-			   from bookstore_books);
+where price = (
+	select max(price)
+	from bookstore_books);
 
 
 -- Task 6
