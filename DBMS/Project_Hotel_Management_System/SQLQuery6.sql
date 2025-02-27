@@ -205,7 +205,7 @@ create index idx_CheackInAndOut on Hotel_Bookings(CheckInDate, CheckOutDate);
 
 -- Create Stored procedure to get total revenu generate in month.
 create procedure sp_CalculateMonthlyRevenue(
-    @Year int,
+	@Year int,
     @Month int
 )
 as
@@ -218,7 +218,6 @@ end;
 exec sp_CalculateMonthlyRevenue
 	@Year = 2025,
     @Month = 3;
-
 
 -- Create UD Function to calculate the total number of days customer stayed.
 create function fn_CalculateTotalDays(
@@ -281,7 +280,7 @@ select *
 from Hotel_Rooms;
 
 
--- Trigger to cancle booking. Update status Availabel insted of delete.
+-- Trigger to cancle booking. Update status Available insted of delete.
 create trigger trg_CalceleBooking
 on Hotel_Bookings
 instead of delete
@@ -296,6 +295,29 @@ end;
 delete 
 from Hotel_Bookings
 where BookingId = 8;
+
+
+-- Trigger to Add Booked Service price to booking table.
+create trigger trg_AddServiceCharge
+on Hotel_ServiceBooking
+after insert
+as 
+begin
+	update Hotel_Bookings
+	set TotalAmount = Hotel_Bookings.TotalAmount + Hotel_Services.Price
+	from Hotel_Bookings 
+	inner join Hotel_ServiceBooking on Hotel_Bookings.BookingId = Hotel_ServiceBooking.BookingId
+	inner join Hotel_Services on Hotel_ServiceBooking.ServiceId = Hotel_Services.ServiceId
+end;
+
+insert into Hotel_ServiceBooking(ServiceId, BookingId) values
+(1, 3);
+
+select *
+from Hotel_Bookings;
+
+select *
+from Hotel_ServiceBooking;
 
 
 
