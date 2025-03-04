@@ -15,7 +15,6 @@ export class CustomerGuard implements CanActivate{
       this.router.navigate(['./user/login']);
       return false;
     }
-
     const role = localStorage.getItem('role');
     if(role === 'Customer' || role === 'Admin'){
       return true;

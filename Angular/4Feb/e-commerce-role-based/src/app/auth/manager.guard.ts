@@ -14,7 +14,6 @@ export class ManagerGuard implements CanActivate{
     if(value !== 'true'){
       return false;
     }
-
     const role = localStorage.getItem('role');
     if(role === 'Manager' || role === 'Admin'){
       return true;

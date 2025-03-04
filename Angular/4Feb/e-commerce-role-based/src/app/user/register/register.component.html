@@ -3,10 +3,19 @@
 <div class="container">
     <form [formGroup]="user" (ngSubmit)="onSubmit()">
         <label for="name">Name: </label>
-        <input type="text" name="name" formControlName="name"/><br>
-        <!-- <div *ngIf=""> error</div> -->
+        <input type="text" name="name" formControlName="name" />
+        <div *ngIf="user.controls.name.invalid && (user.controls.name.dirty || user.controls.name.touched)">
+            <small *ngIf="user.controls.name.errors?.['required']" style="color: red;">Name is required.</small>
+            <small *ngIf="user.controls.name.errors?.['minlength']" style="color: red;">Name must be at least 4 characters long.</small>
+        </div>
+        <br>
         <label for="email">Email:</label>
-        <input type="email" name="email" id="email" formControlName="email"><br>
+        <input type="email" name="email" id="email" formControlName="email">
+        <div *ngIf="user.controls.email.invalid && user.controls.email.dirty || user.controls.email.touched">
+            <small *ngIf="user.controls.email.errors?.['required']" style="color: red;">Eamil is required</small>
+            <small *ngIf="user.controls.email.errors?.['email']" style="color: red;">Enter Valid Email</small>
+        </div>
+        <br>
         <label for="password">Password: </label>
         <input type="password" name="password" id="" formControlName="password"><br>
         <button type="submit" [disabled]="user.invalid">Submit</button>

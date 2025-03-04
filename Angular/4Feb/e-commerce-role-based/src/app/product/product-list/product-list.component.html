@@ -1,11 +1,16 @@
 <p>product-list</p>
 
-<a routerLink="../cart">View Cart</a>
+<a routerLink="../cart">View Cart</a><br>
+
+<label for="search"></label>
+<input type="text" name="search" id="search" [(ngModel)]="searchProduct" 
+placeholder="You can Search products. . ." #searchInput (input)="onSearchChange(searchInput.value)" />
+<p>Searching For: {{searchProduct}}</p>
 
 <div class="container">
     <div *ngFor="let product of productList" class="product-list">
         <h4>{{product.name}}</h4>
-        <p>Price: Rs.{{product.price}}/-</p>
+        <p>Price: {{product.price | currency: 'INR'}}/-</p>
         <button (click)="addToCart(product)">Add To Cart</button>
         <button (click)="placeOrder(product)">Place Order</button>
     </div>

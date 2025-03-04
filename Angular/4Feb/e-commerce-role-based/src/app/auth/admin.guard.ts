@@ -4,23 +4,20 @@ import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot } from
 @Injectable({
   providedIn: 'root'
 })
+export class AdminGuard implements CanActivate {
 
-export class AdminGuard implements CanActivate{
-
-  constructor(private router: Router){}
+  constructor(private router: Router) { }
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
     const value = localStorage.getItem('isLoggedIn');
-    if(value !== 'true'){
+    if (value !== 'true') {
       return false;
     }
-
     const role = localStorage.getItem('role');
-    if(role === 'Admin'){
+    if (role === 'Admin') {
       return true;
     }
     console.log("you do not have admin acsess . . .");
-    
     this.router.navigate(['/']);
     return false;
   }

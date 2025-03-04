@@ -17,7 +17,6 @@ export class OrderService {
 
   constructor() { }
 
-  //Funality for order list
   removeFromOrder(product: Product){
     this.orderList = this.orderList.filter(item => item.id !== product.id);
     // console.log('product removed from orders', this.orderList);

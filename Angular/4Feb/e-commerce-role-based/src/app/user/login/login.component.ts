@@ -6,7 +6,7 @@ import { Role } from '../../auth/role.enum';
 @Component({
   selector: 'app-login',
   standalone: false,
-  
+
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
@@ -16,18 +16,17 @@ export class LoginComponent {
     password: new FormControl('', [Validators.required])
   })
 
-  constructor(private userService: UserService){}
-  
-    onSubmit(){
-      console.log(this.user.value);
-      const newUser = {
-        email: this.user.value.email!,
-        password: this.user.value.password!,
-        role: Role.Customer
-      }
+  constructor(private userService: UserService) { }
 
-      this.userService.cheakLogin(newUser);
-      
+  onSubmit() {
+    console.log(this.user.value);
+    const newUser = {
+      email: this.user.value.email!,
+      password: this.user.value.password!,
+      role: Role.Customer
     }
+
+    this.userService.cheakLogin(newUser);
+  }
 }
 

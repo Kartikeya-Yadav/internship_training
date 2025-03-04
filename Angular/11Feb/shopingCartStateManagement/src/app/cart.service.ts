@@ -10,7 +10,6 @@ export interface Product {
 @Injectable({
     providedIn: 'root'
 })
-
 export class CartService {
     private cartList = new BehaviorSubject<Product[]>([]);
     cartList$ = this.cartList.asObservable();
