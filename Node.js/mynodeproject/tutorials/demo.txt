@@ -1,0 +1,1 @@
+The fs.createReadStream() method in Node.js is used to create a readable stream to read data from a file. This method is part of the fs (file system) module and is ideal for reading large files, as it reads the file in chunks rather than loading the entire file into memory. T
