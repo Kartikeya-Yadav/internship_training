@@ -1,0 +1,27 @@
+{
+  "name": "jwt_lms",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon dist/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "Role Based Authentication in a Libarary Management System using JWT",
+  "dependencies": {
+    "@types/express": "^5.0.0",
+    "@types/jsonwebtoken": "^9.0.9",
+    "@types/mssql": "^9.1.7",
+    "bcrypt": "^5.1.1",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
+    "mssql": "^11.0.1",
+    "nodemon": "^3.1.9"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
+    "@types/nodemon": "^1.19.6"
+  }
+}
