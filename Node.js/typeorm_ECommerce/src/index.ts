@@ -3,12 +3,14 @@ import { AppDataSource } from "./config/database";
 import { userRouter } from "./routes/user.route";
 import { productRouter } from "./routes/product.route";
 import "reflect-metadata"
+import { orderRouter } from "./routes/order.route";
 
 const app = express();
 
 app.use(express.json());
 app.use("/user", userRouter);
 app.use("/product", productRouter);
+app.use("/order", orderRouter)
 
 AppDataSource.initialize()
     .then(() => {
