@@ -1,0 +1,29 @@
+<p>login here: </p>
+<form [formGroup]="user" (ngSubmit)="onSubmit()">
+
+    <label for="email">Email:</label>
+    <input id="email" type="email" formControlName="email" />
+    <small *ngIf="user.controls['email']?.errors?.['required'] && user.controls['email']?.touched">
+      Email is required.
+    </small>
+    <small *ngIf="user.controls['email']?.errors?.['email'] && user.controls['email']?.touched">
+      Please enter a valid email address.
+    </small>
+    <br>
+
+    <label for="password">Password:</label>
+    <input id="password" type="password" formControlName="password" />
+    <small *ngIf="user.controls['password']?.errors?.['required'] && user.controls['password']?.touched">
+      Password is required.
+    </small>
+    <small *ngIf="user.controls['password']?.errors?.['minlength'] && user.controls['password']?.touched">
+      Minimum {{ user.controls['password'].errors?.['minlength'].requiredLength }} characters required.
+      (Current: {{ user.controls['password'].errors?.['minlength'].actualLength }})
+    </small>
+    <br>
+
+    <button type="submit" [disabled]="user.invalid">Submit</button>
+  
+  </form>
+
+  <p style="color: red;">{{message}}</p>

@@ -1,0 +1,61 @@
+<p>Register: </p>
+
+<form [formGroup]="user" (ngSubmit)="onSubmit()">
+
+    <label for="userName">Username:</label>
+    <input id="userName" type="text" formControlName="userName" />
+    <small *ngIf="user.controls['userName']?.errors?.['required'] && user.controls['userName']?.touched">
+      Username is required.
+    </small>
+    <small *ngIf="user.controls['userName']?.errors?.['minlength'] && user.controls['userName']?.touched">
+      Minimum {{ user.controls['userName'].errors?.['minlength'].requiredLength }} characters required.
+      (Current: {{ user.controls['userName'].errors?.['minlength'].actualLength }})
+    </small>
+    <br>
+
+    <label for="email">Email:</label>
+    <input id="email" type="email" formControlName="email" />
+    <small *ngIf="user.controls['email']?.errors?.['required'] && user.controls['email']?.touched">
+      Email is required.
+    </small>
+    <small *ngIf="user.controls['email']?.errors?.['email'] && user.controls['email']?.touched">
+      Please enter a valid email address.
+    </small>
+    <br>
+  
+    <label for="age">Age:</label>
+    <input id="age" type="number" formControlName="age" />
+    <small *ngIf="user.controls['age']?.errors?.['required'] && user.controls['age']?.touched">
+      Age is required.
+    </small>
+    <small *ngIf="user.controls['age']?.errors?.['min'] && user.controls['age']?.touched">
+      Must be 18 years or older.
+    </small>
+    <br>
+
+    <label for="gender">Gender:</label>
+    <select id="gender" formControlName="gender">
+      <option value="">Select</option>
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+      <option value="other">Other</option>
+    </select>
+    <small *ngIf="user.controls['gender']?.errors?.['required'] && user.controls['gender']?.touched">
+      Gender is required.
+    </small>
+    <br>
+  
+    <label for="password">Password:</label>
+    <input id="password" type="password" formControlName="password" />
+    <small *ngIf="user.controls['password']?.errors?.['required'] && user.controls['password']?.touched">
+      Password is required.
+    </small>
+    <small *ngIf="user.controls['password']?.errors?.['minlength'] && user.controls['password']?.touched">
+      Minimum {{ user.controls['password'].errors?.['minlength'].requiredLength }} characters required.
+      (Current: {{ user.controls['password'].errors?.['minlength'].actualLength }})
+    </small>
+    <br>
+
+    <button type="submit" [disabled]="user.invalid">Submit</button>
+  
+  </form>
