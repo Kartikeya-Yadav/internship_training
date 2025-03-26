@@ -3,6 +3,7 @@ import cors from 'cors';
 import { AppDataSource } from './dbConfig';
 import { User } from './user';
 import  jwt  from 'jsonwebtoken';
+import { varifyUserLogin } from './middleware';
 const secretKey = "secretKey";
 
 const app = express();
@@ -47,6 +48,14 @@ app.post("/users/login", async (req: Request, res: Response) => {
         res.status(400).json({err: (error as Error).message})
     }
     
+});
+
+app.get("/users/profile", varifyUserLogin, async (req: Request, res: Response) => {
+    const userEmail:string = req.body.email;
+    const manager = AppDataSource.manager;
+
+    const user = await manager.findOneBy(User, { email: userEmail });
+    res.status(200).json({user : user});
 });
 
 

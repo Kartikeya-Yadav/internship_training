@@ -8,7 +8,6 @@ import { Injectable } from '@angular/core';
 export class UserService {
   private baseUrl = 'http://localhost:3000'; 
 
-
   constructor(private http: HttpClient) {}
 
 
@@ -24,4 +23,7 @@ export class UserService {
     return this.http.post(`${this.baseUrl}/users/login`, userData);
   }
 
+  getProfile() {
+    return this.http.get(`${this.baseUrl}/users/profile`);
+}
 }
